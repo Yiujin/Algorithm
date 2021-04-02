@@ -1,41 +1,10 @@
-from itertools import product
-
 def solution(n): # 효율성 실패 
-    num = [1,2,4]
+    if n <= 3:
+        return '124'[n-1]
 
-    if n ==1 :
-        return "1"
-    elif n == 2:
-        return "2"
-    elif n ==3:
-        return "4"
-    else:        
-        i = 9
-        li =[0,3]
-        while 1:
-            if li[-1] > 500000000:
-                break
-
-            li.append(li[-1] + i)
-            i = i * 3
-        
-        # print(len(li), li)
-
-        chk = False
-        repeat , idx = 0,0
-        for i in range(len(li)):
-            if li[i] < n <= li[i+1]:
-                chk = True
-                repeat = i+1
-                idx = i
-                break
-        
-        answer = list(product(num, repeat= repeat))
-        answer = answer[n-li[idx]-1]
-        # print(answer)
-        answer = ''.join(str(x) for x in answer)
-
-        return answer
+    else:
+        q,r = divmod(n-1, 3)
+        return solution(q) + '124'[r]
 
 if __name__ == "__main__":
     # n <= 500,000,000

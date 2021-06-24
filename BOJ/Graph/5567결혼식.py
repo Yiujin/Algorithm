@@ -23,6 +23,6 @@ while q:
             v[i] = v[fr]+1
 answer = 0
 for i in v[2:]:
-    if i <= 3:
+    if i ==2 or i ==3:
         answer+=1
 print(answer)

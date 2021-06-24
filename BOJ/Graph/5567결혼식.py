@@ -21,7 +21,8 @@ while q:
         if v[i] == 0:
             q.append(i)
             v[i] = v[fr]+1
-try:
-    print(v.index(3) - 1)
-except:
-    print(0)
+answer = 0
+for i in v[2:]:
+    if i <= 3:
+        answer+=1
+print(answer)

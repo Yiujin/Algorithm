@@ -67,8 +67,6 @@ def sum(mat, r,c):
 
     return mat
 
-
-from collections import deque
 if __name__ == '__main__' :
     N,M,K = map(int, input().split()) # 격자크기, 파이어볼 갯수, 이동명령 수
     mat = [[[] for _ in range(N)] for _ in range(N)]

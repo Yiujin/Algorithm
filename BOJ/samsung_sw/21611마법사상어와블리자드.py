@@ -114,6 +114,7 @@ def continous_explode(d1):
 
     lend1 = len(d1)
     do_del = False
+    # print(d1)
     prev = d1[0]
     cnt = 1
     for i in range(1, lend1):
@@ -139,6 +140,8 @@ def continous_explode(d1):
     for d in d1:
         if d != 0:
             new.append(d)
+
+    new.extend([0] * (number - len(new)))
 
     return new, do_del
 
@@ -197,6 +200,7 @@ for _ in range(M):
             break
     # print('after continuous explode: ', d1)
     mat = after_blizard_2d(d1)
+    print(mat)
 
 # print(answer)
 print(1*answer[1] + 2 * answer[2] + 3*answer[3])
